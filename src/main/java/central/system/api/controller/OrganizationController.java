@@ -30,14 +30,6 @@ public class OrganizationController {
 	@Autowired
 	OrganizationRepository organizationRepository;
 	
-	
-	@CrossOrigin(origins="*")
-	@GetMapping("/")
-	public String start(){
-		System.out.println("Entra");
-		 return "Hello";
-	}
-	
 
 	// Get organizations
 	@CrossOrigin(origins="*")
@@ -61,7 +53,7 @@ public class OrganizationController {
 	
 	@CrossOrigin(origins="*")
 	@PostMapping("organization")
-	public Organization createEmployee(@RequestBody Organization organization){
+	public Organization createOrganization(@RequestBody Organization organization){
 		return this.organizationRepository.save(organization);	
 	}
 	
